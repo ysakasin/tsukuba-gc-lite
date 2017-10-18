@@ -3,6 +3,8 @@ A script to generate garbage collection calendar which is formatted json in Tsuk
 
 If you need only calender, it is available on [dist/](./dist).
 
+**Caution**: This is unofficial. Official information is available on ["Tsukuba City Calendar for Putting Out Garbage"](http://www.city.tsukuba.ibaraki.jp/14211/14244/001115.html).
+
 
 ## Requirement
 
