@@ -1,0 +1,27 @@
+{
+  "year": 2017,
+  "cycle": [
+    ["none"],
+    ["burnable"],
+    ["cans", "used_paper"],
+    ["oversized", "pet"],
+    ["non_burnale", "glass"],
+    ["burnable"],
+    ["none"]
+  ],
+  "special case": {
+    "2017-05-30": "none",
+    "2017-05-31": "none",
+    "2017-06-29": "none",
+    "2017-08-29": "none",
+    "2017-08-30": "none",
+    "2017-08-31": "none",
+    "2017-10-31": "none",
+    "2017-11-29": "none",
+    "2017-11-30": "none",
+    "2018-01-01": "none",
+    "2018-01-02": "none",
+    "2018-01-03": "burnable",
+    "2018-03-29": "none"
+  }
+}
