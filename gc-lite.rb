@@ -55,7 +55,7 @@ class Tsukuba::GC::Lite
     @counter = Array.new(7, 0)
   end
 
-  def make_calender
+  def make_calendar
     return @result_obj if @result_obj
     @result_obj = {}
 
@@ -77,8 +77,8 @@ class Tsukuba::GC::Lite
   end
 
   def dump
-    calender = make_calender()
-    JSON.pretty_generate(calender) + "\n"
+    calendar = make_calendar()
+    JSON.pretty_generate(calendar) + "\n"
   end
 end
 
