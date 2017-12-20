@@ -11,6 +11,7 @@
 
 require "date"
 require "json"
+require "icalendar"
 
 module Tsukuba
   module GC; end
@@ -31,6 +32,10 @@ class Tsukuba::GC::Lite
 
   def self.generate(seed_path)
     self.new(seed_path).dump
+  end
+
+  def self.generate_ics(seed_path)
+    self.new(seed_path).dump_ics
   end
 
   def initialize(seed_path)
@@ -80,28 +85,60 @@ class Tsukuba::GC::Lite
     calendar = make_calendar()
     JSON.pretty_generate(calendar) + "\n"
   end
+
+  def dump_ics
+    calendar = make_calendar()
+    ics = Icalendar::Calendar.new
+    calendar.each do |date, type|
+      if type == TYPES_JA[:none]
+        next
+      end
+
+      ics.event do |e|
+        e.dtstart = Icalendar::Values::Date.new(Date.parse(date))
+        e.summary = type
+      end
+    end
+
+    ics.to_ical
+  end
 end
 
 def print_usage
-  puts "Usage: ruby gc-lite.rb [seed] [dest]"
+  puts "Usage: ruby gc-lite.rb FORMAT SEED_FILE [dest]"
   puts "  If dest are omitted, it prints result to stdout."
+  puts "Formats:"
+  puts "  json, ics"
 end
 
 
 if __FILE__ == $0
-  seed = ARGV[0]
-  dest = ARGV[1]
+  mode = ARGV[0]
+  seed = ARGV[1]
+  dest = ARGV[2]
 
   if seed.nil?
     print_usage()
     exit
   end
 
-  json = Tsukuba::GC::Lite.generate(seed)
-  if dest
-    File.write(dest, json)
+
+  case mode
+  when "json" then
+    str = Tsukuba::GC::Lite.generate(seed)
+  when "ics" then
+    str = Tsukuba::GC::Lite.generate_ics(seed)
   else
-    print json
+    puts "Error: unknown format"
+    puts ""
+    print_usage()
+    exit
+  end
+
+  if dest
+    File.write(dest, str)
+  else
+    print str
   end
 end
 
