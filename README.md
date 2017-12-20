@@ -14,8 +14,9 @@ If you need only calender, it is available on [dist/](./dist).
 ## Usage
 
 ```
-ruby gc-lite.rb [seed] [dest]
+ruby gc-lite.rb [format] [seed] [dest]
 ```
 
+- `format`: Select format of output. `json` or `ics`
 - `seed`: Location of seed file. Examples of seed file are avairable on [seed/](./seed)
 - `dest`: Output json to `dest`. If `dest` are omitted, gc-lite.rb prints result to stdout.
