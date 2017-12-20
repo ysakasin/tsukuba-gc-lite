@@ -9,6 +9,7 @@ If you need only calender, it is available on [dist/](./dist).
 ## Requirement
 
 - Ruby (>= 2.2)
+- [icalendar gem](https://rubygems.org/gems/icalendar/)
 
 
 ## Usage
