@@ -1,5 +1,5 @@
 # tsukuba-gc-lite
-A script to generate garbage collection calendar which is formatted json in Tsukuba City. This is a alternative of [tsukuba-gc](https://github.com/NKMR6194/tsukuba-gc).
+A script to generate garbage collection calendar which is formatted json in Tsukuba City. This is a alternative of [tsukuba-gc](https://github.com/ysakasin/tsukuba-gc).
 
 If you need only calender, it is available on [dist/](./dist).
 

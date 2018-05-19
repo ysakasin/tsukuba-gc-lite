@@ -6,7 +6,7 @@
 #  MIT License
 #  Copyright (c) 2017 SAKATA Sinji
 #
-#  https://github.com/NKMR6194/tsukuba-gc-lite
+#  https://github.com/ysakasin/tsukuba-gc-lite
 # --------------------------------------------- #
 
 require "date"
@@ -141,4 +141,3 @@ if __FILE__ == $0
     print str
   end
 end
-
